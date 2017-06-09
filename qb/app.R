@@ -3,6 +3,7 @@ library(shiny)
 library(shinydashboard)
 library(DT)
 library(shinyBS)
+library(shinyjs)
 
 if (.Platform$OS.type != "unix") {
   Sys.getenv("R_LIBS_USER")
