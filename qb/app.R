@@ -1,30 +1,9 @@
 ## app.R ##
 library(shiny)
-<<<<<<< HEAD
-
-# if (.Platform$OS.type != "unix") {
-#   Sys.getenv("R_LIBS_USER")
-#   Sys.setenv(R_LIBS_USER = "C:/_Syncthing/code/R/win-library/3.2")
-#   Sys.getenv("R_LIBS_USER")
-#   .libPaths("C:/_Syncthing/code/R/win-library/3.2")
-#   
-#   setwd("C:/_Syncthing/code/R/Strategies/QuantBeaver")
-# } else {
-#   setwd("~/Desktop/sf_R_Data/Strategies/QuantBeaver")
-#   
-#   #if(!file.exists('log.txt'))
-#   #  writeLines(c(""), "log.txt")
-# }
-
-=======
->>>>>>> c81a356613a2ee0cfe26646485185aeb5d9bf725
 library(shinydashboard)
 library(DT)
 library(shinyBS)
 
-<<<<<<< HEAD
-#source(paste(getwd(), "lib/1_qb_options.R", sep = "/"))
-=======
 if (.Platform$OS.type != "unix") {
   Sys.getenv("R_LIBS_USER")
   Sys.setenv(R_LIBS_USER = "C:/_Syncthing/code/R/win-library/3.2")
@@ -40,7 +19,6 @@ if (.Platform$OS.type != "unix") {
 }
 
 source(paste(getwd(), "lib/1_qb_options.R", sep = "/"))
->>>>>>> c81a356613a2ee0cfe26646485185aeb5d9bf725
 
 # http://stackoverflow.com/questions/36132204/reactive-radiobuttons-with-tooltipbs-in-shiny
 radioTooltip <-
@@ -83,34 +61,7 @@ radioTooltip <-
     htmltools::attachDependencies(bsTag, shinyBS:::shinyBSDep)
         }
 
-<<<<<<< HEAD
-# qb_getInstTable <- function() {
-#   iTable <-
-#     dplyr::mutate(instrument.table()[, c("primary_id",
-#                                          "asset_type",
-#                                          "type",
-#                                          "msCategory",
-#                                          "msName",
-#                                          "name")], ifelse(name == "NULL", msName, name))
-#   iTable <-
-#     dplyr::mutate(iTable,
-#                   ifelse(asset_type == "Not Categorized", type, asset_type))
-#   colnames(iTable) <-
-#     c("ID",
-#       "drop3",
-#       "drop4",
-#       "Category",
-#       "drop1",
-#       "drop2",
-#       "Name",
-#       "aType")
-#   iTable$row <- seq.int(1, nrow(iTable), 1)
-#   #View(iTable)
-#   return(iTable[, c("row", "ID", "Name", "aType", "Category")])
-# }
 
-iTable <- NULL #qb_getInstTable()
-=======
 qb_getInstTable <- function() {
   iTable <-
     dplyr::mutate(instrument.table()[, c("primary_id",
@@ -137,7 +88,6 @@ qb_getInstTable <- function() {
 }
 
 iTable <- qb_getInstTable()
->>>>>>> c81a356613a2ee0cfe26646485185aeb5d9bf725
 
 sidebar <- dashboardSidebar(width = 300,
                             ## Sidebar content
